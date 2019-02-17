@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="7a2a1ce8-2812-4949-8881-f536d6a90350" ChangeDateTime="02/16/2019 09:32:51">
+    <Property Name="ElementName" Value="[dbo].[FK_AdditionalStoreParameter_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[AdditionalStoreParameter]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_AdditionalStoreParameter_DataType]" />
+  </Operation>
+</Operations>

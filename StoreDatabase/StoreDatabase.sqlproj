@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>StoreDatabase</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{67d8878d-11bd-4b24-9162-94808736b195}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>StoreDatabase</RootNamespace>
+    <AssemblyName>StoreDatabase</AssemblyName>
+    <ModelCollation>1049,CS</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Cyrillic_General_100_BIN</DefaultCollation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="DBO" />
+    <Folder Include="DBO\Tables" />
+    <Folder Include="Initialize" />
+    <Folder Include="DBO\Views" />
+    <Folder Include="DBO\Procedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Store.sql" />
+    <Build Include="dbo\Tables\DataType.sql" />
+    <Build Include="DBO\Tables\AdditionalStoreParameter.sql" />
+    <Build Include="DBO\Tables\StoreAdditionalStoreParameterMapping.sql" />
+    <Build Include="DBO\Tables\Product.sql" />
+    <Build Include="DBO\Tables\AdditionalProductParameter.sql" />
+    <Build Include="DBO\Tables\ProductAdditionalProductParameterMapping.sql" />
+    <Build Include="DBO\Tables\PriceRange.sql" />
+    <Build Include="DBO\Views\AverageProductVolume.sql" />
+    <Build Include="DBO\Tables\Sale.sql" />
+    <Build Include="DBO\Tables\SaleDetail.sql" />
+    <Build Include="DBO\Views\SaleTotal.sql" />
+    <Build Include="DBO\Procedures\UspSaveProductAdditionalParameterValueFloat.sql" />
+    <Build Include="DBO\Procedures\UspSaveProductAdditionalParameterValueText.sql" />
+    <Build Include="DBO\Procedures\UspSaveProductAdditionalParameterValueDate.sql" />
+    <Build Include="DBO\Procedures\UspSaveStoreAdditionalParameterValueFloat.sql" />
+    <Build Include="DBO\Procedures\UspSaveStoreAdditionalParameterValueText.sql" />
+    <Build Include="DBO\Procedures\UspSaveStoreAdditionalParameterValueDate.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Initialize\PostDeploymentInitialization.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Initialize\InitializationDataType.sql" />
+    <None Include="Initialize\InitializationPriceRange.sql" />
+    <None Include="Initialize\FillDatabase.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="StoreDatabase.refactorlog" />
+  </ItemGroup>
+</Project>
