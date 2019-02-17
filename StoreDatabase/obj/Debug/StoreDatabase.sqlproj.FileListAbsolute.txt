@@ -1,9 +1,0 @@
-C:\Users\Сергей\Documents\HO_Magnit_Test\StoreDatabase\StoreDatabase\bin\Debug\StoreDatabase.dacpac
-C:\Users\Сергей\Documents\HO_Magnit_Test\StoreDatabase\StoreDatabase\bin\Debug\StoreDatabase.dll
-C:\Users\Сергей\Documents\HO_Magnit_Test\StoreDatabase\StoreDatabase\bin\Debug\StoreDatabase.pdb
-C:\Users\Сергей\Documents\HO_Magnit_Test\StoreDatabase\StoreDatabase\obj\Debug\StoreDatabase.dll
-C:\Users\Сергей\Documents\HO_Magnit_Test\StoreDatabase\StoreDatabase\obj\Debug\StoreDatabase.pdb
-C:\Users\Сергей\Documents\HO_Magnit_Test\StoreDatabase\StoreDatabase\obj\Debug\Model.xml
-C:\Users\Сергей\Documents\HO_Magnit_Test\StoreDatabase\StoreDatabase\obj\Debug\refactor.xml
-C:\Users\Сергей\Documents\HO_Magnit_Test\StoreDatabase\StoreDatabase\obj\Debug\postdeploy.sql
-C:\Users\Сергей\Documents\HO_Magnit_Test\StoreDatabase\StoreDatabase\obj\Debug\predeploy.sql
