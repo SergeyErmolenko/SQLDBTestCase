@@ -10,8 +10,8 @@ SELECT
 	ISNULL(SUM(sd.Quantity), 0) AS TotalQuantity,
 	ISNULL(SUM(sd.Quantity * pro.Price), 0) AS TotalSum
 FROM Store sto WITH (NOLOCK)
-LEFT JOIN Sale sal WITH (NOLOCK) ON sto.Id = sal.StoreId
-LEFT JOIN SaleDetail sd WITH (NOLOCK) ON sd.SaleId = sal.Id
-LEFT JOIN Product pro WITH (NOLOCK) ON pro.Id = sd.ProductId
+INNER JOIN Sale sal WITH (NOLOCK) ON sto.Id = sal.StoreId
+INNER JOIN SaleDetail sd WITH (NOLOCK) ON sd.SaleId = sal.Id
+INNER JOIN Product pro WITH (NOLOCK) ON pro.Id = sd.ProductId
 WHERE sal.IsActive = 1 AND sto.IsActive = 1 AND sd.IsActive = 1 AND pro.IsActive = 1
 GROUP BY sto.Id, pro.Id, DATEPART(YEAR, sal.OperationDate), DATEPART(MONTH, sal.OperationDate)
